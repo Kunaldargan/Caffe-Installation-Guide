@@ -54,31 +54,31 @@ BUILDING PROTOBUF FROM SOURCE :
 
 If not protoc 2.5.0
 
-Then go to src/directory of protobuf 3.
-Look here : https://stackoverflow.com/questions/35896335/how-can-i-uninstall-protobuf-3-0-0
-The remove command does not work, because the instructions I followed on protocol buffer page uses make to build the tool - you only use remove when installing with apt-get
-Go to source/directory of protobuf 3 and run sudo make uninstall
-If still protoc version = 3.x.x
-rm `which protoc`
-apt-get install protobuf-compiler
-Go to src/directory/protobuf 2.5
-Make -j4
-make check
-sudo make install
-Sudo ldconfig OR export LD_LIBRARY_PATH=/usr/local/lib
-protoc --version
-IT should be 2.5.x
+* Then go to src/directory of protobuf 3.
+* Look here : https://stackoverflow.com/questions/35896335/how-can-i-uninstall-protobuf-3-0-0
+* The remove command does not work, because the instructions I followed on protocol buffer page uses make to build the tool - you only use remove when installing with apt-get
+* Go to source/directory of protobuf 3 and run sudo make uninstall
+* If still protoc version = 3.x.x
+* rm `which protoc`
+* apt-get install protobuf-compiler
+* Go to src/directory/protobuf 2.5
+* make -j4
+* make check
+* sudo make install
+* sudo ldconfig OR export LD_LIBRARY_PATH=/usr/local/lib
+* protoc --version
+* It should be 2.5.x
 
 Continue caffe installation :
-make clean
-make all -j4
-make all
-make test
-make runtest
-**Important : If you do not have include/caffe/proto in your caffe installation directory then do the following: Go to caffe installation directory
-protoc src/caffe/proto/caffe.proto --cpp_out=.
-mkdir include/caffe/proto
-mv src/caffe/proto/caffe.pb.h include/caffe/proto
+* make clean
+* make all -j4
+* make all
+* make test
+* make runtest
+* **Important : If you do not have include/caffe/proto in your caffe installation directory then do the following: Go to caffe installation directory
+* protoc src/caffe/proto/caffe.proto --cpp_out=.
+* mkdir include/caffe/proto
+* mv src/caffe/proto/caffe.pb.h include/caffe/proto
 
 '''
 
